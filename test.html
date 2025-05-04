@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Management</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="add-blog-btn" onclick="showAddBlogForm()">Add Blog</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Blog ID</th>
+                    <th>Blog Picture</th>
+                    <th>Author's Handle</th>
+                    <th>Author's ID</th>
+                    <th>Blog Title</th>
+                    <th>Date</th>
+                    <th>Number of Likes</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="blogTableBody">
+                <!-- Blog rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal" id="addBlogModal">
+        <div class="modal-content">
+            <span class="close" onclick="hideAddBlogForm()">&times;</span>
+            <h2>Add New Blog</h2>
+            <form id="addBlogForm" onsubmit="addBlog(event)">
+                <label for="blogId">Blog ID:</label>
+                <input type="text" id="blogId" name="blogId" required>
+                
+                <label for="blogPicture">Blog Picture URL:</label>
+                <input type="text" id="blogPicture" name="blogPicture" required>
+                
+                <label for="authorHandle">Author's Handle:</label>
+                <input type="text" id="authorHandle" name="authorHandle" required>
+                
+                <label for="authorId">Author's ID:</label>
+                <input type="text" id="authorId" name="authorId" required>
+                
+                <label for="blogTitle">Blog Title:</label>
+                <input type="text" id="blogTitle" name="blogTitle" required>
+                
+                <label for="blogContent">Blog Content:</label>
+                <textarea id="blogContent" name="blogContent" required></textarea>
+                
+                <button type="submit">Add Blog</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="viewBlogModal">
+        <div class="modal-content">
+            <span class="close" onclick="hideViewBlogModal()">&times;</span>
+            <h2>Blog Details</h2>
+            <p id="viewBlogContent"></p>
+        </div>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>
